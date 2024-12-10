@@ -1,0 +1,27 @@
+O structura de date reprezinta o inglobare a mai multor tipuri de date ce impreuna formeaza un nou tip de data.
+O structura de date se scrie prin cuvantul cheie struct
+struct Student 
+{
+char* nume;
+int varsta;
+int nrNote;
+float* note;
+bool esteRestant;
+double gpa;
+};
+Cand declaram o structura scriem struct urmat de numele structurii .
+In limbajul C : typedef struct student
+Cand declaram o variabila din tipul structurii noastre, aceasta poarta numele de instanta.
+Student student1; student1 este o instanta a structurii Student.
+Variabilele declarate in interiorul unei structuri se numesc campuri (fields).
+int a;
+vs
+int varsta;
+Operatori noi: . - dupa label-ul instantei punctul ne ofera acces la oricare dintre field-urile disponibile.
+Pentru instante de tip pointer pentru structura , in loc de . se foloseste -> ;
+nou->nume <=> (*nou).nume;
+char* = string
+Ori de cate ori folosim un vector numeric ca si field, intotdeauna acesta este insotit de o variabila de tip int care ii stie dimensiunea.
+(variabilele sunt dependente una de cealalta)
+EXEMPLU: int nrNote;
+double* note;
