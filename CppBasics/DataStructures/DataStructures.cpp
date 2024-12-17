@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
+#include "MyVector.h"
 struct Caine
 {
 	char* nume;
@@ -81,4 +82,44 @@ int main()
 	{
 		std::cout << "Cainele a fost sters cu succes.";
 	}
+	std::cout << "\n\n\n\n\nvector\n\n\n";
+	MyVector* v1 = createVector({});
+	MyVector* v2 = createVector({ 1,2,3 });
+	MyVector* v3 = createVector({ 1,2,3 }, 5);
+
+	print(*v1);
+	print(*v2);
+	print(*v3);
+
+	pushBack(v1, 10);
+	pushBack(v1, 20);
+	pushBack(v1, 30);
+	pushBack(v1, 40);
+	pushBack(v1, 50);
+	pushBack(v1, 50);
+	pushBack(v1, 50);
+	pushBack(v1, 50);
+	pushBack(v1, 50);
+	std::cout << "Cap of v1 is: " << v1->capacity << std::endl;
+	print(*v1);
+
+	removeAllInstancesOf(v1, 50);
+	print(*v1);
+
+	int it = findElement(v1, 90);
+	if (it != -1)
+	{
+		std::cout << "Element was found at index: " << it << "\n";
+	}
+	else
+	{
+		std::cout << "Element was not found\n";
+	}
+
+	deleteVector(v1);
+	if (v1 == nullptr)
+	{
+		std::cout << "Vector was successfully released from the memory\n";
+	}
+
 }

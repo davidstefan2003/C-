@@ -95,7 +95,7 @@ int main()
 		std::cout << "M - Display mean of the numbers" << std::endl;
 		std::cout << "S - Display the smallest number" << std::endl;
 		std::cout << "L - Display the largest number" << std::endl;
-		std::cout << "Q- Quit" << std::endl << std::endl;
+		std::cout << "Q - Quit" << std::endl << std::endl;
 		std::cout << "Enter your choice: ";
 		std::cin >> option;
 
