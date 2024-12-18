@@ -1,0 +1,7 @@
+O functie recursiva este impartita in 2 faze.
+Faza de apel si faza de return
+O functie recursiva poate avea mai multe faze de apel si mai multe faze de return.
+Acestea se aloca pe Call Stack una peste cealalta, fara sa iasa niciuna din scope.
+Instructiunile pana in reapelarea functiei reprezinta faza de apel.
+Instructiunile dupa apelarea functiei sunt cele care se executa la faza de return.
+O functie recursiva trebuie sa aiba o conditie de iesire.

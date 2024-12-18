@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include "MyVector.h"
+#include "DoublyLinkedList.h"
 struct Caine
 {
 	char* nume;
@@ -82,7 +83,7 @@ int main()
 	{
 		std::cout << "Cainele a fost sters cu succes.";
 	}
-	std::cout << "\n\n\n\n\nvector\n\n\n";
+	std::cout << "\n\n\n\n\nVector\n\n\n";
 	MyVector* v1 = createVector({});
 	MyVector* v2 = createVector({ 1,2,3 });
 	MyVector* v3 = createVector({ 1,2,3 }, 5);
@@ -120,6 +121,30 @@ int main()
 	if (v1 == nullptr)
 	{
 		std::cout << "Vector was successfully released from the memory\n";
+	}
+
+	std::cout << "\n\n\n\n\nDoubly Linked List\n\n\n";
+	DoublyLinkedList* list = createList();
+
+	insertSorted(list, createStudent("George", 13)); //13 15 28 39
+	insertSorted(list, createStudent("Alin", 28));
+	insertSorted(list, createStudent("Bogdan", 15));
+	insertSorted(list, createStudent("Calin", 39));
+
+	DoublyLinkedList* secondList = createList();
+	insertSorted(secondList, createStudent("Eusebiu", 11)); // 11 20 25 33 69
+	insertSorted(secondList, createStudent("Florin", 20));
+	insertSorted(secondList, createStudent("Gabriel", 25));
+	insertSorted(secondList, createStudent("Hercule", 33));
+	insertSorted(secondList, createStudent("Laurentiu", 69));
+
+	DoublyLinkedList* mergedList = mergeSort(list, secondList);
+	reverseList(mergedList);
+	recursivePrint(mergedList->first);
+
+	if (isSorted(mergedList))
+	{
+		std::cout << "Este sortata\n";
 	}
 
 }

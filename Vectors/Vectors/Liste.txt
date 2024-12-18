@@ -1,0 +1,14 @@
+O lista nu e contigua in memorie.
+Fiecare celula a unei liste e mai mare in dimensiune decat celula unui vector. (mai are 1/2 pointeri in plus)
+Beneficii:
+Insertie rapida in O(1) oriunde in lista.
+Nu depinde de fragmentarea memoriei pentru a putea aloca elemente
+(daca exista 100 de spatii goale in memorie, si fiecare spatiu are 16B, 
+un vector de dimensiuni nu va putea sa se aloce pentru a isi schimba capacitatea, 
+deoarece ar avea nevoie ca spatiile goale sa fie contigue, pe cand o lista poate sa aloce in oricare dintre spatiile goale,
+depinzand de contiguitate).
+Fiecare nod al unei liste are un pointer catre nodul urmator, si optional catre cel din spate.
+(doubly linked list = 2 pointeri, linked list = 1 pointer).
+Nu au acces direct, accesarea unui element se face in O(n).
+Sortarea se face in O(n).
+Sortarea a 2 liste sortate(mergeSort) O(n+m), unde n si m sunt dimensiunile listelor.
